@@ -32,7 +32,7 @@ class StringBuilder {
     this._value = str + this.value;
   }
   pad(str) {
-    this._value = str + this.value + str;
+    return this.append(str) + this.prepend(str);
   }
 }
 const builder = new StringBuilder('.');
