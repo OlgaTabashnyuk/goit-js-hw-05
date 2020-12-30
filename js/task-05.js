@@ -66,9 +66,7 @@ class Car {
    */
   accelerate(value) {
     const currentSpeed = this.speed + value;
-    if (currentSpeed <= this.maxSpeed) {
-      this.speed += value;
-    }
+    this.speed = currentSpeed > this.maxSpeed ? this.maxSpeed : currentSpeed;
   }
 
   /*
@@ -77,9 +75,7 @@ class Car {
    */
   decelerate(value) {
     const currentSpeed = this.speed - value;
-    if (currentSpeed >= 0) {
-      this.speed -= value;
-    }
+    this.speed = currentSpeed < 0 ? 0 : currentSpeed;
   }
 
   /*
